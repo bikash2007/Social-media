@@ -5,6 +5,7 @@ import SideBar from './SideBar/SideBar'
 import PostList from './SideBar/PostList'
 import CreatePost from './SideBar/CreatePost'
 import PostlistProvider from './store/PostListStore'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [tab , setTab] = useState('Create-post')
@@ -17,7 +18,7 @@ function App() {
     {sideNav && <div> <SideBar setSideNav={setSideNav} tab={tab} setTab={setTab}/> </div>}
      <div className='p-4 w-full overflow-scroll flex flex-col flex-wrap'>
        <Navbar setSideNav={setSideNav} sideNav={sideNav}/>
-       {tab === 'home' ? <PostList/> : <CreatePost/>}
+       <Outlet/>
        <Footer/>
      </div>
    </div>
