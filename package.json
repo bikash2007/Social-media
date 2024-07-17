@@ -2,10 +2,13 @@
   "name": "my-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://bikash2007.github.io/Social-media",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy":"npm run build",
+    "deploy":"gh-page -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
